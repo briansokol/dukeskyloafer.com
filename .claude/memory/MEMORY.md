@@ -1,2 +1,2 @@
 - [user_profile.md](user_profile.md) — Duke Skyloafer: gamer/streamer, React + Cloudflare stack
-- [project_website_plan.md](project_website_plan.md) — dukeskyloafer.com: Tasks 1-9 done, resume at Task 10 (playlists page)
+- [project_website_plan.md](project_website_plan.md) — dukeskyloafer.com: all tasks complete, needs deploy config (logo, KV, secrets, playlist IDs)
