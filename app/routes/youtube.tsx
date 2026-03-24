@@ -17,10 +17,10 @@ export async function loader({ context }: Route.LoaderArgs) {
   const channelId = env.YOUTUBE_CHANNEL_ID;
 
   const [upcoming, recent] = await Promise.all([
-    cachedFetch(env.CACHE, "yt:upcoming", 1800, () =>
+    cachedFetch(env.DSCACHE, "yt:upcoming", 1800, () =>
       fetchUpcomingStreams(apiKey, channelId)
     ),
-    cachedFetch(env.CACHE, "yt:recent", 1800, () =>
+    cachedFetch(env.DSCACHE, "yt:recent", 1800, () =>
       fetchRecentVideos(apiKey, channelId)
     ),
   ]);

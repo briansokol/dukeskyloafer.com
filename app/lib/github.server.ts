@@ -37,6 +37,7 @@ export async function fetchPinnedRepos(
     headers: {
       Authorization: `bearer ${token}`,
       "Content-Type": "application/json",
+      "User-Agent": "dukeskyloafer.com",
     },
     body: JSON.stringify({ query: QUERY, variables: { username } }),
   });

@@ -5,8 +5,8 @@ import { GlowLine } from "../components/GlowLine";
 
 // Hardcoded playlist IDs to feature — update these with your actual playlist IDs
 const FEATURED_PLAYLIST_IDS = [
-  // "PLxxxxxxx1",
-  // "PLxxxxxxx2",
+  "PLGQJWsVIUT6uqx7CiBu9spR6bjFx66WUS",
+  "PLGQJWsVIUT6tXJn-YqF634JvJrQ6sfiyC",
 ];
 
 export function meta({}: Route.MetaArgs) {
@@ -23,7 +23,7 @@ export async function loader({ context }: Route.LoaderArgs) {
     return { playlists: [] };
   }
 
-  const playlists = await cachedFetch(env.CACHE, "yt:playlists", 1800, () =>
+  const playlists = await cachedFetch(env.DSCACHE, "yt:playlists", 1800, () =>
     fetchPlaylists(env.YOUTUBE_API_KEY, FEATURED_PLAYLIST_IDS)
   );
 

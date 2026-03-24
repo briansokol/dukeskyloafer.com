@@ -9,8 +9,8 @@
   },
   "kv_namespaces": [
     {
-      "binding": "CACHE",
-      "id": "<will-be-filled-after-creation>"
+      "binding": "DSCACHE",
+      "id": "bfb1f23491c94248ac52a0e0750eb100"
     }
   ]
   // Secrets (set via `npx wrangler secret put`):
