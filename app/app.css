@@ -19,6 +19,8 @@ html {
 
 body {
   @apply bg-bg-dark text-text-primary font-body;
+  background-image: url("/background.jpg");
+  background-repeat: repeat;
 }
 
 h1, h2, h3, h4, h5, h6 {
