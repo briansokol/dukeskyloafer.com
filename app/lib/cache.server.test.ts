@@ -31,10 +31,8 @@ describe("cachedFetch", () => {
 
     expect(result).toEqual({ data: "fresh" });
     expect(fetcher).toHaveBeenCalled();
-    expect(kv.put).toHaveBeenCalledWith(
-      "test-key",
-      JSON.stringify({ data: "fresh" }),
-      { expirationTtl: 1800 }
-    );
+    expect(kv.put).toHaveBeenCalledWith("test-key", JSON.stringify({ data: "fresh" }), {
+      expirationTtl: 1800,
+    });
   });
 });

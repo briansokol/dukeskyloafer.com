@@ -24,7 +24,7 @@ export async function loader({ context }: Route.LoaderArgs) {
   }
 
   const playlists = await cachedFetch(env.DSCACHE, "yt:playlists", 1800, () =>
-    fetchPlaylists(env.YOUTUBE_API_KEY, FEATURED_PLAYLIST_IDS)
+    fetchPlaylists(env.YOUTUBE_API_KEY, FEATURED_PLAYLIST_IDS),
   );
 
   return { playlists };
@@ -56,12 +56,8 @@ export default function Playlists({ loaderData }: Route.ComponentProps) {
                 className="w-full aspect-video object-cover"
               />
               <div className="p-4">
-                <h3 className="font-heading text-sm text-text-primary">
-                  {playlist.title}
-                </h3>
-                <p className="text-xs text-text-secondary mt-1">
-                  {playlist.videoCount} videos
-                </p>
+                <h3 className="font-heading text-sm text-text-primary">{playlist.title}</h3>
+                <p className="text-xs text-text-secondary mt-1">{playlist.videoCount} videos</p>
               </div>
             </a>
           ))}

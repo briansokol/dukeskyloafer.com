@@ -21,9 +21,7 @@ export function Nav() {
                 to={link.to}
                 className={({ isActive }) =>
                   `text-sm uppercase tracking-widest transition-colors ${
-                    isActive
-                      ? "text-accent-cyan"
-                      : "text-text-secondary hover:text-text-primary"
+                    isActive ? "text-accent-cyan" : "text-text-secondary hover:text-text-primary"
                   }`
                 }
               >

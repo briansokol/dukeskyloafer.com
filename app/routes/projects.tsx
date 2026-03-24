@@ -14,7 +14,7 @@ export async function loader({ context }: Route.LoaderArgs) {
   const env = context.cloudflare.env;
 
   const repos = await cachedFetch(env.DSCACHE, "gh:pinned", 3600, () =>
-    fetchPinnedRepos(env.GITHUB_TOKEN, env.GITHUB_USERNAME)
+    fetchPinnedRepos(env.GITHUB_TOKEN, env.GITHUB_USERNAME),
   );
 
   return { repos };

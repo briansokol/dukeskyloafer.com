@@ -24,7 +24,7 @@ export interface Playlist {
 
 export async function fetchUpcomingStreams(
   apiKey: string,
-  channelId: string
+  channelId: string,
 ): Promise<UpcomingStream[]> {
   const searchUrl = `${YT_BASE}/search?part=snippet&channelId=${channelId}&eventType=upcoming&type=video&order=date&maxResults=10&key=${apiKey}`;
   const searchRes = await fetch(searchUrl);
@@ -50,7 +50,7 @@ export async function fetchUpcomingStreams(
 export async function fetchRecentVideos(
   apiKey: string,
   channelId: string,
-  maxResults = 12
+  maxResults = 12,
 ): Promise<RecentVideo[]> {
   // Derive uploads playlist ID: UC... -> UU...
   const uploadsPlaylistId = "UU" + channelId.slice(2);
@@ -67,10 +67,7 @@ export async function fetchRecentVideos(
   }));
 }
 
-export async function fetchPlaylists(
-  apiKey: string,
-  playlistIds: string[]
-): Promise<Playlist[]> {
+export async function fetchPlaylists(apiKey: string, playlistIds: string[]): Promise<Playlist[]> {
   const ids = playlistIds.join(",");
   const url = `${YT_BASE}/playlists?part=snippet,contentDetails&id=${ids}&key=${apiKey}`;
   const res = await fetch(url);

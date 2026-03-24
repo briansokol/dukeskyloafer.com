@@ -7,7 +7,12 @@
     "cf-typegen": "wrangler types",
     "deploy": "npm run build && wrangler deploy",
     "dev": "react-router dev",
+    "format": "oxfmt app/ workers/ *.config.ts react-router.config.ts",
+    "format:check": "oxfmt --check app/ workers/ *.config.ts react-router.config.ts",
+    "lint": "oxlint app/ workers/ --config .oxlintrc.json",
+    "lint:fix": "oxlint app/ workers/ --config .oxlintrc.json --fix",
     "postinstall": "npm run cf-typegen",
+    "prepare": "husky",
     "preview": "npm run build && vite preview",
     "typecheck": "npm run cf-typegen && react-router typegen && tsc -b"
   },
@@ -24,11 +29,27 @@
     "@types/node": "^22",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "oxfmt": "^0.42.0",
+    "oxlint": "^1.57.0",
     "tailwindcss": "^4.2.2",
     "typescript": "^5.9.3",
     "vite": "^7.1.7",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^4.1.1",
     "wrangler": "^4.75.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "oxlint --config .oxlintrc.json --fix",
+      "oxfmt"
+    ],
+    "*.css": [
+      "oxfmt"
+    ],
+    "*.{json,jsonc,md}": [
+      "oxfmt"
+    ]
   }
 }

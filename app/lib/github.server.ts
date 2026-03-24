@@ -28,10 +28,7 @@ const QUERY = `
   }
 `;
 
-export async function fetchPinnedRepos(
-  token: string,
-  username: string
-): Promise<PinnedRepo[]> {
+export async function fetchPinnedRepos(token: string, username: string): Promise<PinnedRepo[]> {
   const res = await fetch("https://api.github.com/graphql", {
     method: "POST",
     headers: {

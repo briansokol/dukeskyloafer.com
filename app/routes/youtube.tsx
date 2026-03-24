@@ -17,12 +17,8 @@ export async function loader({ context }: Route.LoaderArgs) {
   const channelId = env.YOUTUBE_CHANNEL_ID;
 
   const [upcoming, recent] = await Promise.all([
-    cachedFetch(env.DSCACHE, "yt:upcoming", 1800, () =>
-      fetchUpcomingStreams(apiKey, channelId)
-    ),
-    cachedFetch(env.DSCACHE, "yt:recent", 1800, () =>
-      fetchRecentVideos(apiKey, channelId)
-    ),
+    cachedFetch(env.DSCACHE, "yt:upcoming", 1800, () => fetchUpcomingStreams(apiKey, channelId)),
+    cachedFetch(env.DSCACHE, "yt:recent", 1800, () => fetchRecentVideos(apiKey, channelId)),
   ]);
 
   return { upcoming, recent };
@@ -43,16 +39,13 @@ export default function YouTube({ loaderData }: Route.ComponentProps) {
                 videoId={stream.videoId}
                 title={stream.title}
                 thumbnail={stream.thumbnail}
-                subtitle={new Date(stream.scheduledStartTime).toLocaleDateString(
-                  "en-US",
-                  {
-                    weekday: "short",
-                    month: "short",
-                    day: "numeric",
-                    hour: "numeric",
-                    minute: "2-digit",
-                  }
-                )}
+                subtitle={new Date(stream.scheduledStartTime).toLocaleDateString("en-US", {
+                  weekday: "short",
+                  month: "short",
+                  day: "numeric",
+                  hour: "numeric",
+                  minute: "2-digit",
+                })}
               />
             ))}
           </div>

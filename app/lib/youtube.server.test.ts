@@ -15,7 +15,10 @@ describe("fetchUpcomingStreams", () => {
       ok: true,
       json: async () => ({
         items: [
-          { id: { videoId: "vid1" }, snippet: { title: "Stream 1", thumbnails: { high: { url: "thumb1.jpg" } } } },
+          {
+            id: { videoId: "vid1" },
+            snippet: { title: "Stream 1", thumbnails: { high: { url: "thumb1.jpg" } } },
+          },
         ],
       }),
     });

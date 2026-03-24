@@ -2,7 +2,7 @@ export async function cachedFetch<T>(
   kv: KVNamespace,
   key: string,
   ttlSeconds: number,
-  fetcher: () => Promise<T>
+  fetcher: () => Promise<T>,
 ): Promise<T> {
   const cached = await kv.get(key);
   if (cached) {
