@@ -10,7 +10,7 @@
 
 ---
 
-### Task 1: Scaffold the Project
+### ~~Task 1: Scaffold the Project~~ ✅
 
 **Files:**
 - Create: entire project scaffold via template
@@ -42,7 +42,7 @@ git commit -m "chore: scaffold React Router v7 + Cloudflare project"
 
 ---
 
-### Task 2: Configure Tailwind Theme and Fonts
+### ~~Task 2: Configure Tailwind Theme and Fonts~~ ✅
 
 **Files:**
 - Modify: `app/app.css`
@@ -102,7 +102,7 @@ git commit -m "feat: configure dark theme with Anta/Space Grotesk fonts and acce
 
 ---
 
-### Task 3: Build the Root Layout with Navigation
+### ~~Task 3: Build the Root Layout with Navigation~~ ✅
 
 **Files:**
 - Create: `app/components/Nav.tsx`
@@ -196,7 +196,7 @@ git commit -m "feat: add root layout with navigation and glow line divider"
 
 ---
 
-### Task 4: Configure KV Namespace and Wrangler Secrets
+### ~~Task 4: Configure KV Namespace and Wrangler Secrets~~ ✅
 
 **Files:**
 - Modify: `wrangler.jsonc`
@@ -257,7 +257,7 @@ git commit -m "feat: configure KV namespace and environment variables"
 
 ---
 
-### Task 5: Build the KV Cache Utility
+### ~~Task 5: Build the KV Cache Utility~~ ✅
 
 **Files:**
 - Create: `app/lib/cache.server.ts`
@@ -357,7 +357,7 @@ git commit -m "feat: add KV cache utility with TTL support"
 
 ---
 
-### Task 6: Build the YouTube API Client
+### ~~Task 6: Build the YouTube API Client~~ ✅
 
 **Files:**
 - Create: `app/lib/youtube.server.ts`
@@ -592,7 +592,7 @@ git commit -m "feat: add YouTube API client for streams, videos, and playlists"
 
 ---
 
-### Task 7: Build the GitHub API Client
+### ~~Task 7: Build the GitHub API Client~~ ✅
 
 **Files:**
 - Create: `app/lib/github.server.ts`
@@ -761,7 +761,7 @@ git commit -m "feat: add GitHub GraphQL client for pinned repos"
 
 ---
 
-### Task 8: Build the Home Page
+### ~~Task 8: Build the Home Page~~ ✅
 
 **Files:**
 - Modify: `app/routes/home.tsx` (this is the index route created by the scaffold)
@@ -828,7 +828,7 @@ git commit -m "feat: add home page with logo and about section"
 
 ---
 
-### Task 9: Build the YouTube Page (`/youtube`)
+### ~~Task 9: Build the YouTube Page (`/youtube`)~~ ✅
 
 **Files:**
 - Create: `app/routes/youtube.tsx`
@@ -971,7 +971,7 @@ git commit -m "feat: add YouTube page with upcoming streams and recent videos"
 
 ---
 
-### Task 10: Build the Playlists Page (`/youtube/playlists`)
+### ~~Task 10: Build the Playlists Page (`/youtube/playlists`)~~ ✅
 
 **Files:**
 - Create: `app/routes/youtube-playlists.tsx`
@@ -1065,7 +1065,7 @@ git commit -m "feat: add playlists page with links to YouTube"
 
 ---
 
-### Task 11: Build the Projects Page (`/projects`)
+### ~~Task 11: Build the Projects Page (`/projects`)~~ ✅
 
 **Files:**
 - Create: `app/routes/projects.tsx`
@@ -1148,7 +1148,7 @@ git commit -m "feat: add projects page with pinned GitHub repos"
 
 ---
 
-### Task 12: End-to-End Verification and Deploy
+### ~~Task 12: End-to-End Verification and Deploy~~ ✅
 
 **Files:**
 - No new files
