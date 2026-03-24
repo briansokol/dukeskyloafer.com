@@ -5,4 +5,5 @@ export default [
   route("youtube", "routes/youtube.tsx"),
   route("youtube/playlists", "routes/youtube-playlists.tsx"),
   route("projects", "routes/projects.tsx"),
+  route("specs", "routes/specs.tsx"),
 ] satisfies RouteConfig;
