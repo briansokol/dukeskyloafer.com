@@ -5,8 +5,18 @@ import { GlowLine } from "../components/GlowLine";
 
 // Hardcoded playlist IDs to feature — update these with your actual playlist IDs
 const FEATURED_PLAYLIST_IDS = [
-  "PLGQJWsVIUT6uqx7CiBu9spR6bjFx66WUS",
-  "PLGQJWsVIUT6tXJn-YqF634JvJrQ6sfiyC",
+  "PLGQJWsVIUT6uqx7CiBu9spR6bjFx66WUS", // Titan
+  "PLGQJWsVIUT6tXJn-YqF634JvJrQ6sfiyC", // Designated Survivors
+  "PLGQJWsVIUT6tGczW4wIND4AdpBAkm_Fkp", // SE2 Early Access
+  "PLGQJWsVIUT6u9qCTRQz4pCRGXFDXKpVrD", // Stellar Garage
+  "PLGQJWsVIUT6vaehhXbdeY6_tUMbTIHUg4", // Outpost 52
+  "PLGQJWsVIUT6vsTLnTijQoCYCWFu-8lMkJ", // Distant Stars
+  "PLGQJWsVIUT6vM9HXq6dOjCiH6I5mircqF", // SE DLC
+  "PLGQJWsVIUT6vPFTw9cm9a6lhy7aIYhaiz", // Elder Scrolls Online
+  "PLGQJWsVIUT6vHrM2egqcScIpvHW3K1KVX", // EDF 5
+  "PLGQJWsVIUT6siI8A1LleG1lXuqIv67YcV", // EDF 6
+  "PLGQJWsVIUT6uMwT9B3rzRJHsqZnNmCzg_", // Halo MCC
+  "PLGQJWsVIUT6tXGQ5Usk3Ktlh5NXg1qcHy", // Halo Infinite
 ];
 
 export function meta({}: Route.MetaArgs) {
