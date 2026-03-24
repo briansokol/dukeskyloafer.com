@@ -29,12 +29,16 @@ export async function fetchUpcomingStreams(
   if (!videosRes.ok) throw new Error(`YouTube videos failed: ${videosRes.status}`);
   const videosData: YouTubeVideosResponse = await videosRes.json();
 
-  return videosData.items.map((item) => ({
-    videoId: item.id,
-    title: item.snippet.title,
-    thumbnail: item.snippet.thumbnails.high?.url ?? item.snippet.thumbnails.default.url,
-    scheduledStartTime: item.liveStreamingDetails?.scheduledStartTime ?? "",
-  }));
+  return videosData.items
+    .map((item) => ({
+      videoId: item.id,
+      title: item.snippet.title,
+      thumbnail: item.snippet.thumbnails.high?.url ?? item.snippet.thumbnails.default.url,
+      scheduledStartTime: item.liveStreamingDetails?.scheduledStartTime ?? "",
+    }))
+    .toSorted(
+      (a, b) => new Date(a.scheduledStartTime).getTime() - new Date(b.scheduledStartTime).getTime(),
+    );
 }
 
 export async function fetchRecentVideos(

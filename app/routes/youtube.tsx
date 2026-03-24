@@ -21,7 +21,10 @@ export async function loader({ context }: Route.LoaderArgs) {
     cachedFetch(env.DSCACHE, "yt:recent", 1800, () => fetchRecentVideos(apiKey, channelId)),
   ]);
 
-  return { upcoming, recent };
+  const upcomingIds = new Set(upcoming.map((s) => s.videoId));
+  const filteredRecent = recent.filter((v) => !upcomingIds.has(v.videoId));
+
+  return { upcoming, recent: filteredRecent };
 }
 
 export default function YouTube({ loaderData }: Route.ComponentProps) {
