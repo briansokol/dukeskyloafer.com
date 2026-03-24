@@ -1,15 +1,26 @@
 @import "tailwindcss" source(".");
 
+@import url("https://fonts.googleapis.com/css2?family=Anta&family=Space+Grotesk:wght@300..700&display=swap");
+
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-heading: "Anta", sans-serif;
+  --font-body: "Space Grotesk", sans-serif;
+  --color-bg-dark: #0a0a0f;
+  --color-bg-card: #12121a;
+  --color-accent-cyan: #00C9CB;
+  --color-accent-purple: #8600FF;
+  --color-text-primary: #f0f0f0;
+  --color-text-secondary: #a0a0b0;
 }
 
-html,
-body {
-  @apply bg-white dark:bg-gray-950;
+html {
+  color-scheme: dark;
+}
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+body {
+  @apply bg-bg-dark text-text-primary font-body;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
 }
