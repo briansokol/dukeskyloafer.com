@@ -3,7 +3,7 @@
   "name": "dukeskyloafer-com",
   "compatibility_date": "2025-04-04",
   "main": "./workers/app.ts",
-  "workers_dev": false,
+  "workers_dev": true,
   "preview_urls": false,
   "vars": {
     "YOUTUBE_CHANNEL_ID": "UCv1a_xOMw3V9fsXoro3Is5Q",
