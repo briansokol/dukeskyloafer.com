@@ -4,8 +4,8 @@
   "compatibility_date": "2025-04-04",
   "main": "./workers/app.ts",
   "vars": {
-    "YOUTUBE_CHANNEL_ID": "<channel-id>",
-    "GITHUB_USERNAME": "dukeskyloafer"
+    "YOUTUBE_CHANNEL_ID": "UCv1a_xOMw3V9fsXoro3Is5Q",
+    "GITHUB_USERNAME": "briansokol"
   },
   "kv_namespaces": [
     {
