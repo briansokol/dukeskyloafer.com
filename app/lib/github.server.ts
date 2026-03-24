@@ -1,11 +1,6 @@
-export interface PinnedRepo {
-  name: string;
-  description: string | null;
-  url: string;
-  language: string | null;
-  languageColor: string | null;
-  stars: number;
-}
+import type { PinnedRepo, GitHubGraphQLResponse } from "../types/github";
+
+export type { PinnedRepo } from "../types/github";
 
 const QUERY = `
   query($username: String!) {
@@ -41,10 +36,10 @@ export async function fetchPinnedRepos(token: string, username: string): Promise
 
   if (!res.ok) throw new Error(`GitHub API failed: ${res.status}`);
 
-  const json = await res.json();
+  const json: GitHubGraphQLResponse = await res.json();
   const nodes = json.data.user.pinnedItems.nodes;
 
-  return nodes.map((node: any) => ({
+  return nodes.map((node) => ({
     name: node.name,
     description: node.description,
     url: node.url,
