@@ -2,6 +2,7 @@
 .env
 /node_modules/
 *.tsbuildinfo
+.playwright-mcp/
 
 # React Router
 /.react-router/
