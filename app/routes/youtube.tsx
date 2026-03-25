@@ -38,7 +38,11 @@ export default function YouTube({ loaderData }: Route.ComponentProps) {
       <YouTubeTabs />
       {upcoming.length > 0 && (
         <section className="mb-12">
-          <PageHeader title="Upcoming Streams" />
+          <PageHeader
+            title="Upcoming Streams"
+            link={{ label: "My YouTube Channel", href: "https://www.youtube.com/@DukeSkyloafer" }}
+            subtitle="I typically stream on Thursdays and Sundays."
+          />
           <CardGrid columns={3}>
             {upcoming.map((stream) => (
               <VideoCard
@@ -60,7 +64,10 @@ export default function YouTube({ loaderData }: Route.ComponentProps) {
       )}
 
       <section className="mt-12">
-        <PageHeader title="Recent Videos" />
+        <PageHeader
+          title="Recent Videos"
+          link={{ label: "See All Videos", href: "https://www.youtube.com/@DukeSkyloafer/videos" }}
+        />
         <CardGrid columns={3}>
           {recent.map((video) => (
             <VideoCard

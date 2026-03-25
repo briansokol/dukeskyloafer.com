@@ -9,7 +9,7 @@ import { PageHeader } from "../components/PageHeader";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Projects | Duke Skyloafer" },
-    { name: "description", content: "Duke Skyloafer's open source projects." },
+    { name: "description", content: "Open source projects" },
   ];
 }
 
@@ -28,7 +28,11 @@ export default function Projects({ loaderData }: Route.ComponentProps) {
 
   return (
     <PageContainer>
-      <PageHeader title="Projects" />
+      <PageHeader
+        title="Projects"
+        link={{ label: "My GitHub", href: "https://github.com/briansokol" }}
+        subtitle="This is a selection of some of my open source work."
+      />
 
       <CardGrid columns={2}>
         {repos.map((repo) => (

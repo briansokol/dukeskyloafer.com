@@ -50,7 +50,13 @@ export default function Playlists({ loaderData }: Route.ComponentProps) {
   return (
     <PageContainer>
       <YouTubeTabs />
-      <PageHeader title="Playlists" />
+      <PageHeader
+        title="Playlists"
+        link={{
+          label: "See All Playlists",
+          href: "https://www.youtube.com/@DukeSkyloafer/playlists",
+        }}
+      />
 
       {playlists.length === 0 ? (
         <p className="mt-8 text-text-secondary">No playlists featured yet.</p>

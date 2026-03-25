@@ -170,7 +170,10 @@ export function meta({}: Route.MetaArgs) {
 export default function Specs() {
   return (
     <PageContainer>
-      <PageHeader title="Gaming PC Specs" />
+      <PageHeader
+        title="Gaming PC Specs"
+        subtitle="I run a 2 PC setup while streaming. I game on Serenity while Surge streams and/or records the footage through a capture card. I use OBS to manage the stream."
+      />
 
       <CardGrid columns={2}>
         {SPEC_CATEGORIES.map((category) => (
