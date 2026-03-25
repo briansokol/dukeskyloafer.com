@@ -1,6 +1,9 @@
 import type { Route } from "./+types/youtube-playlists";
 import { cachedFetch } from "../lib/cache.server";
 import { fetchPlaylists } from "../lib/youtube.server";
+import { Card } from "../components/Card";
+import { CardGrid } from "../components/CardGrid";
+import { PageContainer } from "../components/PageContainer";
 import { PageHeader } from "../components/PageHeader";
 import { YouTubeTabs } from "../components/YouTubeTabs";
 
@@ -45,35 +48,36 @@ export default function Playlists({ loaderData }: Route.ComponentProps) {
   const { playlists } = loaderData;
 
   return (
-    <main className="max-w-5xl mx-auto px-6 py-12">
+    <PageContainer>
       <YouTubeTabs />
       <PageHeader title="Playlists" />
 
       {playlists.length === 0 ? (
         <p className="mt-8 text-text-secondary">No playlists featured yet.</p>
       ) : (
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <CardGrid columns={3}>
           {playlists.map((playlist) => (
             <a
               key={playlist.id}
               href={`https://www.youtube.com/playlist?list=${playlist.id}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="block bg-bg-card rounded-lg overflow-hidden border border-white/5 transition-all duration-300 hover:-translate-y-1 hover:border-accent-purple/30 hover:shadow-[0_0_20px_var(--color-accent-purple),0_0_40px_var(--color-accent-purple)]"
             >
-              <img
-                src={playlist.thumbnail}
-                alt={playlist.title}
-                className="w-full aspect-video object-cover"
-              />
-              <div className="p-4">
-                <h3 className="font-heading text-sm text-text-primary">{playlist.title}</h3>
-                <p className="text-xs text-text-secondary mt-1">{playlist.videoCount} videos</p>
-              </div>
+              <Card className="overflow-hidden">
+                <img
+                  src={playlist.thumbnail}
+                  alt={playlist.title}
+                  className="w-full aspect-video object-cover"
+                />
+                <div className="p-4">
+                  <h3 className="font-heading text-sm text-text-primary">{playlist.title}</h3>
+                  <p className="text-xs text-text-secondary mt-1">{playlist.videoCount} videos</p>
+                </div>
+              </Card>
             </a>
           ))}
-        </div>
+        </CardGrid>
       )}
-    </main>
+    </PageContainer>
   );
 }

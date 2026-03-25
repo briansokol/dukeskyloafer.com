@@ -38,6 +38,16 @@ const data = await cachedFetch(env.DSCACHE, "cache-key", ttlSeconds, () => fetch
 
 Files with `.server.ts` suffix are server-only (never bundled to client). API integrations live in `app/lib/`.
 
+### Shared UI components
+
+Reusable wrapper components in `app/components/` reduce duplicated Tailwind classes across routes:
+
+- **`Card`** — purple-glow hover card with border and translate effect. Accepts `className` for additional styles (`p-6`, `overflow-hidden`, `text-center`). Wrap in `<Link>` or `<a>` externally when the card should be clickable.
+- **`CardGrid`** — responsive grid layout. `columns={2}` for 2-col, `columns={3}` (default) for 3-col. Includes `mt-8` spacing.
+- **`PageContainer`** — `<main>` wrapper with `max-w-5xl mx-auto px-6 py-12`. Use for all top-level route components (except home which has a custom layout).
+
+Prefer composing these components over duplicating className strings in route files.
+
 ### Environment variables
 
 Accessed via `context.cloudflare.env` in loaders. Public vars are in `wrangler.jsonc`, secrets use `wrangler secret put`. Dev secrets go in `.dev.vars`.

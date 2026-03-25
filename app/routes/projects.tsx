@@ -1,6 +1,9 @@
 import type { Route } from "./+types/projects";
 import { cachedFetch } from "../lib/cache.server";
 import { fetchPinnedRepos } from "../lib/github.server";
+import { Card } from "../components/Card";
+import { CardGrid } from "../components/CardGrid";
+import { PageContainer } from "../components/PageContainer";
 import { PageHeader } from "../components/PageHeader";
 
 export function meta({}: Route.MetaArgs) {
@@ -24,37 +27,33 @@ export default function Projects({ loaderData }: Route.ComponentProps) {
   const { repos } = loaderData;
 
   return (
-    <main className="max-w-5xl mx-auto px-6 py-12">
+    <PageContainer>
       <PageHeader title="Projects" />
 
-      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <CardGrid columns={2}>
         {repos.map((repo) => (
-          <a
-            key={repo.name}
-            href={repo.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block bg-bg-card rounded-lg p-6 border border-white/5 transition-all duration-300 hover:-translate-y-1 hover:border-accent-purple/30 hover:shadow-[0_0_20px_var(--color-accent-purple),0_0_40px_var(--color-accent-purple)]"
-          >
-            <h3 className="font-heading text-lg text-text-primary">{repo.name}</h3>
-            {repo.description && (
-              <p className="text-sm text-text-secondary mt-2">{repo.description}</p>
-            )}
-            <div className="flex items-center gap-4 mt-4 text-xs text-text-secondary">
-              {repo.language && (
-                <span className="flex items-center gap-1">
-                  <span
-                    className="w-3 h-3 rounded-full inline-block"
-                    style={{ backgroundColor: repo.languageColor ?? "#666" }}
-                  />
-                  {repo.language}
-                </span>
+          <a key={repo.name} href={repo.url} target="_blank" rel="noopener noreferrer">
+            <Card className="p-6">
+              <h3 className="font-heading text-lg text-text-primary">{repo.name}</h3>
+              {repo.description && (
+                <p className="text-sm text-text-secondary mt-2">{repo.description}</p>
               )}
-              {repo.stars > 0 && <span>★ {repo.stars}</span>}
-            </div>
+              <div className="flex items-center gap-4 mt-4 text-xs text-text-secondary">
+                {repo.language && (
+                  <span className="flex items-center gap-1">
+                    <span
+                      className="w-3 h-3 rounded-full inline-block"
+                      style={{ backgroundColor: repo.languageColor ?? "#666" }}
+                    />
+                    {repo.language}
+                  </span>
+                )}
+                {repo.stars > 0 && <span>★ {repo.stars}</span>}
+              </div>
+            </Card>
           </a>
         ))}
-      </div>
-    </main>
+      </CardGrid>
+    </PageContainer>
   );
 }

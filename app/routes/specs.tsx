@@ -1,4 +1,7 @@
 import type { Route } from "./+types/specs";
+import { Card } from "../components/Card";
+import { CardGrid } from "../components/CardGrid";
+import { PageContainer } from "../components/PageContainer";
 import { PageHeader } from "../components/PageHeader";
 
 interface SpecItem {
@@ -166,15 +169,12 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Specs() {
   return (
-    <main className="max-w-5xl mx-auto px-6 py-12">
+    <PageContainer>
       <PageHeader title="Gaming PC Specs" />
 
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <CardGrid columns={2}>
         {SPEC_CATEGORIES.map((category) => (
-          <div
-            key={category.name}
-            className="bg-bg-card rounded-lg p-6 border border-white/5 transition-all duration-300 hover:-translate-y-1 hover:border-accent-purple/30 hover:shadow-[0_0_20px_var(--color-accent-purple),0_0_40px_var(--color-accent-purple)]"
-          >
+          <Card key={category.name} className="p-6">
             <h3 className="font-heading text-lg text-text-primary mb-4">{category.name}</h3>
             <div className="flex flex-col divide-y divide-white/10">
               {category.items.map((item) => (
@@ -210,9 +210,9 @@ export default function Specs() {
                 </div>
               ))}
             </div>
-          </div>
+          </Card>
         ))}
-      </div>
-    </main>
+      </CardGrid>
+    </PageContainer>
   );
 }
