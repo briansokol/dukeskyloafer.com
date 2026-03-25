@@ -30,6 +30,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#0a0a0f" />
         <Meta />
         <Links />
       </head>
@@ -38,12 +39,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
           src="/laser-background-purple.svg"
           alt=""
           aria-hidden="true"
+          loading="lazy"
+          fetchPriority="low"
           className="pointer-events-none fixed inset-y-0 left-0 z-0 h-full w-auto -translate-x-[30%]"
         />
         <img
           src="/laser-background-green.svg"
           alt=""
           aria-hidden="true"
+          loading="lazy"
+          fetchPriority="low"
           className="pointer-events-none fixed inset-y-0 right-0 z-0 h-full w-auto translate-x-[30%]"
         />
         <div className="relative z-10">{children}</div>

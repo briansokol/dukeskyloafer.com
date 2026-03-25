@@ -61,7 +61,7 @@ export default function Home() {
           <img
             src="/logo-large.png"
             alt="Duke Skyloafer logo"
-            className="w-48 h-48 mx-auto mb-8"
+            className="w-48 h-48 object-contain mx-auto mb-8"
             style={{ animation: "glow-pulse 3s ease-in-out infinite" }}
           />
           <h1 className="text-5xl md:text-7xl mb-4 text-text-primary">Duke Skyloafer</h1>
