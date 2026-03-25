@@ -1,22 +1,20 @@
-# Welcome to React Router!
+# dukeskyloafer.com
 
-A modern, production-ready template for building full-stack React applications using React Router.
+Personal website built with [React Router v7](https://reactrouter.com/) (SSR) and deployed on [Cloudflare Workers](https://developers.cloudflare.com/workers/). Displays GitHub projects, YouTube streams/videos, and playlists.
 
-## Features
+## Tech Stack
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+- **Framework**: React Router 7 with server-side rendering
+- **Runtime**: Cloudflare Workers
+- **Styling**: Tailwind CSS v4
+- **Linting**: [Oxlint](https://oxc.rs/docs/guide/usage/linter) (not ESLint)
+- **Formatting**: [Oxfmt](https://oxc.rs/docs/guide/usage/formatter) (not Prettier)
+- **Testing**: Vitest
+- **Pre-commit**: Husky + lint-staged
 
 ## Getting Started
 
 ### Installation
-
-Install the dependencies:
 
 ```bash
 npm install
@@ -32,48 +30,49 @@ npm run dev
 
 Your application will be available at `http://localhost:5173`.
 
-## Previewing the Production Build
-
-Preview the production build locally:
+### Linting and Formatting
 
 ```bash
-npm run preview
+npm run lint         # Run Oxlint
+npm run lint:fix     # Run Oxlint with auto-fix
+npm run format       # Format with Oxfmt
+npm run format:check # Check formatting without writing
 ```
 
-## Building for Production
+Pre-commit hooks automatically run `oxlint --fix` and `oxfmt` on staged files.
 
-Create a production build:
+### Type Checking
+
+```bash
+npm run typecheck
+```
+
+## Building and Deployment
+
+Build for production:
 
 ```bash
 npm run build
 ```
 
-## Deployment
+Deploy to Cloudflare Workers:
 
-Deployment is done using the Wrangler CLI.
-
-To build and deploy directly to production:
-
-```sh
+```bash
 npm run deploy
 ```
 
-To deploy a preview URL:
+Deploy a preview URL:
 
-```sh
+```bash
 npx wrangler versions upload
 ```
 
-You can then promote a version to production after verification or roll it out progressively.
+Promote a version to production:
 
-```sh
+```bash
 npx wrangler versions deploy
 ```
 
-## Styling
+## License
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+The source code is licensed under the [MIT License](LICENSE). However, the name "Duke Skyloafer," logos, personal content, and branding are **not** licensed for reuse. Forks must remove or replace all personal branding before deployment.
