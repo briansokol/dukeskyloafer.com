@@ -1,5 +1,5 @@
 import type { Route } from "./+types/specs";
-import { GlowLine } from "../components/GlowLine";
+import { PageHeader } from "../components/PageHeader";
 
 interface SpecItem {
   label: string;
@@ -167,12 +167,14 @@ export function meta({}: Route.MetaArgs) {
 export default function Specs() {
   return (
     <main className="max-w-5xl mx-auto px-6 py-12">
-      <h2 className="text-2xl mb-6 text-accent-cyan">Gaming PC Specs</h2>
-      <GlowLine />
+      <PageHeader title="Gaming PC Specs" />
 
       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
         {SPEC_CATEGORIES.map((category) => (
-          <div key={category.name} className="bg-bg-card rounded-lg p-6">
+          <div
+            key={category.name}
+            className="bg-bg-card rounded-lg p-6 border border-white/5 transition-all duration-300 hover:-translate-y-1 hover:border-accent-purple/30 hover:shadow-[0_0_20px_var(--color-accent-purple),0_0_40px_var(--color-accent-purple)]"
+          >
             <h3 className="font-heading text-lg text-text-primary mb-4">{category.name}</h3>
             <div className="flex flex-col divide-y divide-white/10">
               {category.items.map((item) => (

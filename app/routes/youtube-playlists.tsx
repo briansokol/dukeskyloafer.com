@@ -1,7 +1,8 @@
 import type { Route } from "./+types/youtube-playlists";
 import { cachedFetch } from "../lib/cache.server";
 import { fetchPlaylists } from "../lib/youtube.server";
-import { GlowLine } from "../components/GlowLine";
+import { PageHeader } from "../components/PageHeader";
+import { YouTubeTabs } from "../components/YouTubeTabs";
 
 // Hardcoded playlist IDs to feature — update these with your actual playlist IDs
 const FEATURED_PLAYLIST_IDS = [
@@ -45,8 +46,8 @@ export default function Playlists({ loaderData }: Route.ComponentProps) {
 
   return (
     <main className="max-w-5xl mx-auto px-6 py-12">
-      <h2 className="text-2xl mb-6 text-accent-cyan">Playlists</h2>
-      <GlowLine />
+      <YouTubeTabs />
+      <PageHeader title="Playlists" />
 
       {playlists.length === 0 ? (
         <p className="mt-8 text-text-secondary">No playlists featured yet.</p>
@@ -58,7 +59,7 @@ export default function Playlists({ loaderData }: Route.ComponentProps) {
               href={`https://www.youtube.com/playlist?list=${playlist.id}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="block bg-bg-card rounded-lg overflow-hidden transition-shadow hover:shadow-[0_0_15px_var(--color-accent-purple)]"
+              className="block bg-bg-card rounded-lg overflow-hidden border border-white/5 transition-all duration-300 hover:-translate-y-1 hover:border-accent-purple/30 hover:shadow-[0_0_20px_var(--color-accent-purple),0_0_40px_var(--color-accent-purple)]"
             >
               <img
                 src={playlist.thumbnail}

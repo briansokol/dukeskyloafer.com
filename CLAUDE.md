@@ -51,3 +51,8 @@ Accessed via `context.cloudflare.env` in loaders. Public vars are in `wrangler.j
 - **Path alias**: `~/` maps to `app/`
 - **No global state**: Data flows from loaders through props
 - **Circular imports forbidden**: `import/no-cycle` is set to error
+
+## Tools
+
+- **Playwright MCP**: Available for visually confirming UI changes and debugging issues in the browser. Use Playwright tools to navigate to the local dev server, take screenshots, inspect elements, and verify rendering.
+- **Dev server**: The dev server is usually already running. Check if it's up (e.g., `curl -s -o /dev/null -w "%{http_code}" http://localhost:5173`) before starting a new one. If it's not running, ask the user to start it.

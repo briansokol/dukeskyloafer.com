@@ -11,7 +11,7 @@ export function VideoCard({ videoId, title, thumbnail, subtitle }: VideoCardProp
       href={`https://www.youtube.com/watch?v=${videoId}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="block bg-bg-card rounded-lg overflow-hidden transition-shadow hover:shadow-[0_0_15px_var(--color-accent-cyan)]"
+      className="block bg-bg-card rounded-lg overflow-hidden border border-white/5 transition-all duration-300 hover:-translate-y-1 hover:border-accent-purple/30 hover:shadow-[0_0_20px_var(--color-accent-purple),0_0_40px_var(--color-accent-purple)]"
     >
       <img src={thumbnail} alt={title} className="w-full aspect-video object-cover" />
       <div className="p-4">

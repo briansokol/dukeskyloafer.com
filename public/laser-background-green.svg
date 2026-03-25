@@ -1,0 +1,63 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="1031.14px" height="1998.14px">
+
+    <defs>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="10" result="blur"/>
+        <feComponentTransfer in="blur" result="glow">
+            <feFuncA type="linear" slope="3"/>
+        </feComponentTransfer>
+        <feMerge>
+            <feMergeNode in="glow"/>
+            <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+        </filter>
+    </defs>
+
+    <path
+        fill-rule="evenodd"
+        stroke="#33e0e2"
+        stroke-width="5px"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-opacity="0.8"
+        fill="none"
+        filter="url(#glow)"
+        d="M16.380,367.380 L400.380,15.380 L721.380,240.380 L861.380,601.380 L685.380,1049.380 L463.380,648.380 L234.380,588.380 L16.380,367.380 Z"
+    />
+    <path
+        fill-rule="evenodd"
+        stroke="#33e0e2"
+        stroke-width="5px"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-opacity="0.8"
+        fill="none"
+        filter="url(#glow)"
+        d="M104.380,883.380 L236.380,1434.380 L509.380,1308.380 L545.380,1054.380 L316.380,803.380 L104.380,883.380 Z"
+    />
+    <path
+        fill-rule="evenodd"
+        stroke="#33e0e2"
+        stroke-width="5px"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-opacity="0.8"
+        fill="none"
+        filter="url(#glow)"
+        d="M445.380,1622.380 L577.380,1972.380 L935.380,1569.380 L921.380,1323.380 L740.380,1253.380 L445.380,1622.380 Z"
+    />
+    <path
+        fill-rule="evenodd"
+        stroke="#33e0e2"
+        stroke-width="5px"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-opacity="0.8"
+        fill="none"
+        filter="url(#glow)"
+        d="M839.380,1951.380 L1010.380,1960.380 L985.380,1701.380 L839.380,1951.380 Z"
+    />
+</svg>

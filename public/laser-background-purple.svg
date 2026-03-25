@@ -1,0 +1,74 @@
+<svg 
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="1147.14px" height="2151.14px">
+
+    <defs>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="10" result="blur"/>
+        <feComponentTransfer in="blur" result="glow">
+            <feFuncA type="linear" slope="3"/>
+        </feComponentTransfer>
+        <feMerge>
+            <feMergeNode in="glow"/>
+            <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+        </filter>
+    </defs>
+
+    <path
+        fill-rule="evenodd"
+        stroke="#a033ff"
+        stroke-width="5px"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-opacity="0.8"
+        fill="none"
+        filter="url(#glow)"
+        d="M771.380,13.380 L1120.380,547.380 L230.380,348.380 L129.380,76.380 L771.380,13.380 Z"
+    />
+    <path
+        fill-rule="evenodd"
+        stroke="#a033ff"
+        stroke-width="5px"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-opacity="0.8"
+        fill="none"
+        filter="url(#glow)"
+        d="M44.380,356.380 L667.380,650.380 L839.380,1313.380 L397.380,1071.380 L13.380,1334.380 L44.380,356.380 Z"
+    />
+    <path
+        fill-rule="evenodd"
+        stroke="#a033ff"
+        stroke-width="5px"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-opacity="0.8"
+        fill="none"
+        filter="url(#glow)"
+        d="M70.380,682.380 L232.380,745.380 L76.380,781.380 L70.380,682.380 Z"
+    />
+    <path
+        fill-rule="evenodd"
+        stroke="#a033ff"
+        stroke-width="5px"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-opacity="0.8"
+        fill="none"
+        filter="url(#glow)"
+        d="M451.380,1407.380 L274.380,1999.380 L65.380,2039.380 L58.380,1550.380 L451.380,1407.380 Z"
+    />
+    <path
+        fill-rule="evenodd"
+        stroke="#a033ff"
+        stroke-width="5px"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-opacity="0.8"
+        fill="none"
+        filter="url(#glow)"
+        d="M666.380,1414.380 L1098.380,1888.380 L778.380,2130.380 L518.380,2131.380 L666.380,1414.380 Z"
+    />
+</svg>

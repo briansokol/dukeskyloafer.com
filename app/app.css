@@ -10,7 +10,7 @@
   --color-accent-cyan: #00c9cb;
   --color-accent-purple: #8600ff;
   --color-text-primary: #f0f0f0;
-  --color-text-secondary: #a0a0b0;
+  --color-text-secondary: #b8b8c8;
 }
 
 html {
@@ -21,6 +21,7 @@ body {
   @apply bg-bg-dark text-text-primary font-body;
   background-image: url("/background.jpg");
   background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 h1,
@@ -30,4 +31,76 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 15px var(--color-accent-purple))
+      drop-shadow(0 0 30px var(--color-accent-purple));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px var(--color-accent-purple))
+      drop-shadow(0 0 45px var(--color-accent-purple))
+      drop-shadow(0 0 60px var(--color-accent-purple));
+  }
+}
+
+@keyframes laser-scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes grid-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes reveal-text {
+  from {
+    max-width: 0;
+  }
+  to {
+    max-width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  0%,
+  100% {
+    border-color: var(--color-accent-cyan);
+  }
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

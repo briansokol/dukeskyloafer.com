@@ -34,7 +34,19 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <img
+          src="/laser-background-purple.svg"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none fixed inset-y-0 left-0 z-0 h-full w-auto -translate-x-[30%]"
+        />
+        <img
+          src="/laser-background-green.svg"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none fixed inset-y-0 right-0 z-0 h-full w-auto translate-x-[30%]"
+        />
+        <div className="relative z-10">{children}</div>
         <ScrollRestoration />
         <Scripts />
       </body>
