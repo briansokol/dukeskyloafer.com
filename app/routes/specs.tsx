@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import type { Route } from "./+types/specs";
 import { Card } from "../components/Card";
 import { CardGrid } from "../components/CardGrid";
@@ -66,14 +67,14 @@ const SPEC_CATEGORIES: SpecCategory[] = [
     items: [
       {
         label: "Monitor",
-        value: '27" Samsung Odyssey G7 HDR 1440p 240Hz Curved',
+        value: '27" Samsung Odyssey G7 1440p HDR',
         url: "https://www.samsung.com/ca/business/monitors/curved/odyssey-g7-lc27g75tqsnxza/",
       },
       { label: "Keyboard", value: "Wooting 80HE", url: "https://wooting.io/wooting-80he" },
       {
         label: "Mouse",
-        value: "SteelSeries Rival 650 Wireless",
-        url: "https://steelseries.com/gaming-mice/rival-650",
+        value: "SteelSeries Aerox 5 Wireless",
+        url: "https://steelseries.com/gaming-mice/aerox-5",
       },
       {
         label: "Headset",
@@ -127,8 +128,8 @@ const SPEC_CATEGORIES: SpecCategory[] = [
       },
       {
         label: "Capture Card",
-        value: "Elgato 4K60 Pro MK. 2",
-        url: "https://help.elgato.com/hc/en-us/articles/360033795031-Elgato-Game-Capture-4K60-Pro-MK-2-Technical-Specifications",
+        value: "Elgato 4K Pro",
+        url: "https://www.elgato.com/us/en/p/game-capture-4k-pro",
       },
     ],
   },
@@ -168,11 +169,22 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Specs() {
+  const [diagramOpen, setDiagramOpen] = useState(false);
+
+  useEffect(() => {
+    if (!diagramOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setDiagramOpen(false);
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [diagramOpen]);
+
   return (
     <PageContainer>
       <PageHeader
         title="Gaming PC Specs"
-        subtitle="I run a 2 PC setup while streaming. I game on Serenity while Surge streams and/or records the footage through a capture card. I use OBS to manage the stream."
+        subtitle="I run a 2 PC setup while streaming. I game on Serenity while Surge streams and/or records the footage through a capture card. I use OBS Studio to manage the stream."
       />
 
       <CardGrid columns={2}>
@@ -216,6 +228,68 @@ export default function Specs() {
           </Card>
         ))}
       </CardGrid>
+
+      <section className="mt-12">
+        <h2 className="font-heading text-2xl sm:text-3xl text-text-primary mb-6">Dual PC Setup</h2>
+        <Card className="p-6 cursor-pointer" onClick={() => setDiagramOpen(true)}>
+          <img
+            src="/stream-pc-setup.svg"
+            alt="Dual PC streaming setup diagram"
+            className="w-full"
+          />
+          <ul className="mt-6 list-disc space-y-1 text-sm text-text-secondary">
+            <li>
+              The gaming PC outputs at 1440p 120hz, which passes through the capture card to the
+              primary monitor. The gaming PC's audio and video are inputs in OBS Studio.
+            </li>
+            <li>
+              Video is captured and sent to YouTube at 1440p 60hz, encoded in AVC (H.264) at 18Mbps.
+            </li>
+            <li>
+              The Streaming PC handles most of the audio (including Discord), but I do loop the mic
+              back into the gaming PC in case I need to use the in-game chat on the gaming PC.
+            </li>
+            <li>
+              Attaching the mic and headphones to the audio interface allows me to monitor my own
+              voice in real time with no latency, but it also means I can only hear the gaming PC
+              through the headphones when OBS is running.
+            </li>
+            <li>
+              When recording, a copy is stored on my local network drive with the audio tracks
+              separated. This way I can replace my voiceover or the music if I need to edit it
+              later. I usually record <i>or</i> stream, but sometimes I do both at the same time.
+            </li>
+          </ul>
+        </Card>
+
+        {diagramOpen && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+            onClick={() => setDiagramOpen(false)}
+          >
+            <button
+              className="absolute top-6 right-6 cursor-pointer text-white/70 hover:text-white transition-colors"
+              onClick={() => setDiagramOpen(false)}
+              aria-label="Close"
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <img
+              src="/stream-pc-setup.svg"
+              alt="Dual PC streaming setup diagram"
+              className="max-w-[95vw] max-h-[95vh]"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        )}
+      </section>
     </PageContainer>
   );
 }
