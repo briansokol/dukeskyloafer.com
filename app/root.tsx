@@ -45,7 +45,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           aria-hidden="true"
           loading="lazy"
           fetchPriority="low"
-          className="pointer-events-none fixed inset-y-0 left-0 z-0 h-full w-auto -translate-x-[30%]"
+          className="pointer-events-none fixed inset-y-0 left-0 z-0 hidden h-full w-auto -translate-x-[30%] md:block"
         />
         <img
           src="/laser-background-green.svg"
@@ -53,7 +53,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           aria-hidden="true"
           loading="lazy"
           fetchPriority="low"
-          className="pointer-events-none fixed inset-y-0 right-0 z-0 h-full w-auto translate-x-[30%]"
+          className="pointer-events-none fixed inset-y-0 right-0 z-0 hidden h-full w-auto translate-x-[30%] md:block"
         />
         <div className="relative z-10">{children}</div>
         <ScrollRestoration />

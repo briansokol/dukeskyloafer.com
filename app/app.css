@@ -11,15 +11,27 @@
   --color-text-secondary: #b8b8c8;
 }
 
+html,
+body {
+  overflow-x: clip;
+}
+
 html {
   color-scheme: dark;
 }
 
 body {
   @apply bg-bg-dark text-text-primary font-body;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
   background-image: url("/background.jpg");
   background-repeat: repeat;
-  background-attachment: fixed;
+  background-size: auto;
 }
 
 h1,
