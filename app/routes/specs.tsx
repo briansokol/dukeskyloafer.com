@@ -77,9 +77,9 @@ const SPEC_CATEGORIES: SpecCategory[] = [
         url: "https://steelseries.com/gaming-mice/aerox-5",
       },
       {
-        label: "Headset",
-        value: "HyperX Cloud II",
-        url: "https://hyperx.com/products/hyperx-cloud-ii",
+        label: "In-Ear Monitor",
+        value: "Fosi Audio IM4",
+        url: "https://fosiaudio.com/products/fosi-audio-im4",
       },
     ],
   },
