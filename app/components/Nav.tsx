@@ -9,6 +9,7 @@ const links = [
   { to: "/youtube", label: "YouTube" },
   { to: "/projects", label: "Projects" },
   { to: "/specs", label: "Specs" },
+  { to: "/skyrim-lonely-wolf", label: "Skyrim" },
 ];
 
 function HamburgerIcon({ open }: { open: boolean }) {

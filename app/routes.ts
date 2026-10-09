@@ -6,4 +6,5 @@ export default [
   route("youtube/playlists", "routes/youtube-playlists.tsx"),
   route("projects", "routes/projects.tsx"),
   route("specs", "routes/specs.tsx"),
+  route("skyrim-lonely-wolf", "routes/skyrim.tsx"),
 ] satisfies RouteConfig;
